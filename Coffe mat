@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coffee Matte</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff7fa;
+    color: #4b3038;
+}
+
+/* ENCABEZADO */
+header {
+    background: #f7b6c9;
+    padding: 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    color: white;
+    font-size: 30px;
+}
+
+nav {
+    margin-top: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: bold;
+}
+
+/* INICIO */
+.inicio {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(#ffdce7, #fff7fa);
+}
+
+.inicio h2 {
+    font-size: 40px;
+    color: #d45b82;
+}
+
+.inicio p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.boton {
+    display: inline-block;
+    background: #d45b82;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* PRODUCTOS */
+section {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+section h2 {
+    color: #d45b82;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.productos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.producto {
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px #e8cbd4;
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-7px);
+}
+
+.producto .emoji {
+    font-size: 70px;
+}
+
+.producto h3 {
+    margin: 10px;
+}
+
+.precio {
+    color: #d45b82;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* PEDIDO */
+#pedido {
+    background: #ffe8ef;
+}
+
+#listaPedido {
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.itemPedido {
+    background: white;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 10px;
+}
+
+/* CONTACTO */
+.contacto {
+    background: white;
+}
+
+.contacto p {
+    margin: 12px;
+    font-size: 18px;
+}
+
+/* PIE */
+footer {
+    background: #d45b82;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 4px;
+    }
+
+    .inicio h2 {
+        font-size: 32px;
+    }
+
+    .producto {
+        width: 90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🌸 Coffee Matte 🌸</h1>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#frapes">Frappés</a>
+<a href="#postres">Postres</a>
+<a href="#pedido">Pedido</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+</header>
+
+
+<!-- INICIO -->
+
+<section class="inicio" id="inicio">
+
+<h2>Bienvenido a Coffee Matte ☕</h2>
+
+<p>Frappés, postres y mucho sabor en un solo lugar 💕</p>
+
+<a class="boton" href="#frapes">Ver menú</a>
+
+</section>
+
+
+<!-- FRAPPÉS -->
+
+<section id="frapes">
+
+<h2>🧋 Nuestros Frappés</h2>
+
+<div class="productos">
+
+<div class="producto">
+
+<div class="emoji">🧋</div>
+
+<h3>Frappé de Fresa</h3>
+
+<p>Delicioso frappé de fresa.</p>
+
+<div class="precio">$65</div>
+
+<button class="boton" onclick="agregarPedido('Frappé de Fresa',65)">
+Agregar
+</button>
+
+</div>
+
+
+<div class="producto">
+
+<div class="emoji">🍫</div>
+
+<h3>Frappé de Chocolate</h3>
+
+<p>Chocolate, crema y mucho sabor.</p>
+
+<div class="precio">$70</div>
+
+<button class="boton" onclick="agregarPedido('Frappé de Chocolate',70)">
+Agregar
+</button>
+
+</div>
+
+
+<div class="producto">
+
+<div class="emoji">🍓</div>
+
+<h3>Frappé Especial</h3>
+
+<p>Nuestra bebida especial de la casa.</p>
+
+<div class="precio">$75</div>
+
+<button class="boton" onclick="agregarPedido('Frappé Especial',75)">
+Agregar
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- POSTRES -->
+
+<section id="postres">
+
+<h2>🍰 Postres</h2>
+
+<div class="productos">
+
+<div class="producto">
+
+<div class="emoji">🍰</div>
+
+<h3>Pastel de Fresa</h3>
+
+<p>Pastel suave con fresa.</p>
+
+<div class="precio">$55</div>
+
+<button class="boton" onclick="agregarPedido('Pastel de Fresa',55)">
+Agregar
+</button>
+
+</div>
+
+
+<div class="producto">
+
+<div class="emoji">🍪</div>
+
+<h3>Galletas</h3>
+
+<p>Galletas recién horneadas.</p>
+
+<div class="precio">$30</div>
+
+<button class="boton" onclick="agregarPedido('Galletas',30)">
+Agregar
+</button>
+
+</div>
+
+
+<div class="producto">
+
+<div class="emoji">🧁</div>
+
+<h3>Cupcake</h3>
+
+<p>Cupcake con decoración especial.</p>
+
+<div class="precio">$40</div>
+
+<button class="boton" onclick="agregarPedido('Cupcake',40)">
+Agregar
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PEDIDOS -->
+
+<section id="pedido">
+
+<h2>🛒 Tu Pedido</h2>
+
+<div id="listaPedido">
+
+<p>Aún no has agregado productos.</p>
+
+</div>
+
+<h3>Total: $<span id="total">0</span></h3>
+
+<br>
+
+<button class="boton" onclick="enviarPedido()">
+Realizar pedido
+</button>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+
+<h2>📞 Contacto</h2>
+
+<p>📱 WhatsApp: 999 000 0000</p>
+
+<p>📸 Instagram: @coffeematte</p>
+
+<p>📍 Mérida, Yucatán</p>
+
+<p>🕐 Lunes - Domingo: 10:00 AM - 9:00 PM</p>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Coffee Matte ☕💕</p>
+
+<p>Hecho con amor</p>
+
+</footer>
+
+
+<script>
+
+let pedido = [];
+let total = 0;
+
+function agregarPedido(nombre, precio) {
+
+    pedido.push({
+        nombre: nombre,
+        precio: precio
+    });
+
+    total += precio;
+
+    mostrarPedido();
+}
+
+
+function mostrarPedido() {
+
+    const lista = document.getElementById("listaPedido");
+
+    lista.innerHTML = "";
+
+    pedido.forEach((producto, index) => {
+
+        const item = document.createElement("div");
+
+        item.className = "itemPedido";
+
+        item.innerHTML = `
+        ${producto.nombre} - $${producto.precio}
+        <button onclick="eliminar(${index})">
+        ❌
+        </button>
+        `;
+
+        lista.appendChild(item);
+
+    });
+
+    document.getElementById("total").textContent = total;
+}
+
+
+function eliminar(index) {
+
+    total -= pedido[index].precio;
+
+    pedido.splice(index, 1);
+
+    mostrarPedido();
+}
+
+
+function enviarPedido() {
+
+    if (pedido.length === 0) {
+
+        alert("Agrega algo al pedido primero 🧋");
+
+        return;
+    }
+
+    let mensaje = "Hola Coffee Matte! Quiero pedir:%0A%0A";
+
+    pedido.forEach(producto => {
+
+        mensaje += "• " + producto.nombre +
+        " - $" + producto.precio + "%0A";
+
+    });
+
+    mensaje += "%0ATotal: $" + total;
+
+    alert("Tu pedido está listo 💕");
+
+    /*
+    Cambia 5219990000000
+    por el número de WhatsApp de la cafetería
+    */
+
+    window.open(
+        "https://wa.me/5219990000000?text=" + mensaje,
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
