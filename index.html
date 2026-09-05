@@ -3,25 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Coffe Matte ☕</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fff5f8;
+      background: #fff7fa;
       color: #5a3a40;
     }
 
     header {
       background: #f8b8c8;
-      padding: 25px;
+      padding: 30px 15px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 40px;
+      font-size: 42px;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 18px;
     }
 
     nav {
@@ -30,18 +41,25 @@
       text-align: center;
       position: sticky;
       top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px #ddd;
     }
 
     nav a {
-      margin: 10px;
+      margin: 8px;
       color: #c45c78;
       text-decoration: none;
       font-weight: bold;
     }
 
     section {
-      padding: 35px 20px;
+      padding: 40px 20px;
       text-align: center;
+    }
+
+    section h2 {
+      color: #c45c78;
+      font-size: 30px;
     }
 
     .productos {
@@ -53,14 +71,34 @@
 
     .producto {
       background: white;
-      width: 250px;
+      width: 260px;
       padding: 20px;
       border-radius: 20px;
       box-shadow: 0 4px 12px #ddd;
+      transition: transform 0.2s;
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+    }
+
+    .producto .emoji {
+      font-size: 60px;
     }
 
     .producto h3 {
       color: #c45c78;
+      font-size: 22px;
+    }
+
+    .producto p {
+      font-size: 16px;
+    }
+
+    .precio {
+      font-size: 20px;
+      font-weight: bold;
+      color: #9b405b;
     }
 
     button {
@@ -70,8 +108,199 @@
       border-radius: 20px;
       color: white;
       font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #df7894;
+    }
+
+    #pedido {
+      background: #ffe4ec;
+    }
+
+    .mensaje {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px #ddd;
     }
 
     footer {
       background: #f8b8c8;
-      padding
+      padding: 25px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 55px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">☕🧋</div>
+    <h1>Coffe Matte</h1>
+    <p>Frappés, postres y mucho sabor 💕</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#frappes">Frappés</a>
+    <a href="#postres">Postres</a>
+    <a href="#pedido">Pedidos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenidos a Coffe Matte 💗</h2>
+    <p>
+      Disfruta nuestros deliciosos frappés y postres preparados
+      especialmente para ti.
+    </p>
+  </section>
+
+  <section id="frappes">
+    <h2>🧋 Nuestros Frappés</h2>
+
+    <div class="productos">
+
+      <div class="producto">
+        <div class="emoji">🍓🧋</div>
+        <h3>Frappé de Fresa</h3>
+        <p>Delicioso frappé de fresa con crema.</p>
+        <div class="precio">$65 MXN</div>
+        <br>
+        <button onclick="pedir('Frappé de Fresa')">
+          Pedir
+        </button>
+      </div>
+
+      <div class="producto">
+        <div class="emoji">🍫🧋</div>
+        <h3>Frappé de Chocolate</h3>
+        <p>Chocolate cremoso con un toque dulce.</p>
+        <div class="precio">$70 MXN</div>
+        <br>
+        <button onclick="pedir('Frappé de Chocolate')">
+          Pedir
+        </button>
+      </div>
+
+      <div class="producto">
+        <div class="emoji">☕🧋</div>
+        <h3>Frappé de Café</h3>
+        <p>Café frío y cremoso para los amantes del café.</p>
+        <div class="precio">$70 MXN</div>
+        <br>
+        <button onclick="pedir('Frappé de Café')">
+          Pedir
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="postres">
+    <h2>🍰 Postres</h2>
+
+    <div class="productos">
+
+      <div class="producto">
+        <div class="emoji">🍰</div>
+        <h3>Pastel de Fresa</h3>
+        <p>Suave pastel con delicioso sabor a fresa.</p>
+        <div class="precio">$55 MXN</div>
+        <br>
+        <button onclick="pedir('Pastel de Fresa')">
+          Pedir
+        </button>
+      </div>
+
+      <div class="producto">
+        <div class="emoji">🍪</div>
+        <h3>Galletas</h3>
+        <p>Galletas recién hechas y crujientes.</p>
+        <div class="precio">$35 MXN</div>
+        <br>
+        <button onclick="pedir('Galletas')">
+          Pedir
+        </button>
+      </div>
+
+      <div class="producto">
+        <div class="emoji">🧁</div>
+        <h3>Cupcake</h3>
+        <p>Pequeño, delicioso y perfecto para acompañar tu bebida.</p>
+        <div class="precio">$40 MXN</div>
+        <br>
+        <button onclick="pedir('Cupcake')">
+          Pedir
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="pedido">
+    <h2>🛒 Haz tu pedido</h2>
+
+    <div class="mensaje">
+      <p id="pedidoTexto">
+        Selecciona un producto para comenzar tu pedido.
+      </p>
+
+      <button onclick="confirmarPedido()">
+        Confirmar pedido
+      </button>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>📞 Contacto</h2>
+
+    <p>📱 WhatsApp: Próximamente</p>
+    <p>📸 Instagram: Próximamente</p>
+    <p>📍 Ubicación: Próximamente</p>
+  </section>
+
+  <footer>
+    <p>☕ Coffe Matte 💕</p>
+    <p>Frappés y postres hechos con cariño.</p>
+    <p>© 2026 Coffe Matte</p>
+  </footer>
+
+  <script>
+    let productoSeleccionado = "";
+
+    function pedir(producto) {
+      productoSeleccionado = producto;
+
+      document.getElementById("pedidoTexto").innerText =
+        "Has seleccionado: " + producto;
+
+      document.getElementById("pedido").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    function confirmarPedido() {
+      if (productoSeleccionado === "") {
+        alert("Primero selecciona un producto ☕");
+      } else {
+        alert(
+          "¡Pedido seleccionado! 💕\n\n" +
+          productoSeleccionado +
+          "\n\nPróximamente podrás enviarlo directamente por WhatsApp."
+        );
+      }
+    }
+  </script>
+
+</body>
+</html>
