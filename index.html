@@ -255,11 +255,26 @@
         Selecciona un producto para comenzar tu pedido.
       </p>
 
-      <button onclick="confirmarPedido()">
-        Confirmar pedido
-      </button>
-    </div>
-  </section>
+  function confirmarPedido() {
+  if (productoSeleccionado === "") {
+    alert("Primero selecciona un producto ☕");
+  } else {
+
+    // CAMBIA ESTE NÚMERO POR EL WHATSAPP DEL NEGOCIO
+    const telefono = "521XXXXXXXXXX";
+
+    const mensaje =
+      "Hola, quiero hacer un pedido en Coffe Matte ☕💕\n\n" +
+      "Producto: " + productoSeleccionado +
+      "\n\n¿Me pueden confirmar el pedido?";
+
+    const url =
+      "https://wa.me/" + telefono +
+      "?text=" + encodeURIComponent(mensaje);
+
+    window.location.href = url;
+  }
+}
 
   <section id="contacto">
     <h2>📞 Contacto</h2>
