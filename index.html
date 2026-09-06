@@ -262,7 +262,7 @@
 
 <a href="tel:529619444361
    style="color:#c45c78; font-size:20px; font-weight:bold;">
-   529619444361
+
 </a>
 
 <p>📸 Instagram: Próximamente</p>
@@ -288,41 +288,26 @@
         behavior: "smooth"
       });
     }
+    
+    function confirmarPedido() {
+        if (productoSeleccionado === "") {
+            alert("Primero selecciona un producto ☕");
+        } else {
+            const telefono = "529619444361";
 
+            const mensaje =
+                "Hola, quiero hacer un pedido en Coffe Matte ☕💕\n\n" +
+                "Producto: " + productoSeleccionado +
+                "\n\n¿Me pueden confirmar el pedido?";
 
-      if (productoSeleccionado === "") {
-        alert("Primero selecciona un producto ☕");
-      } else {
-        alert(
-          "¡Pedido seleccionado! 💕\n\n" +
-          productoSeleccionado +
-          "\n\nPróximamente podrás enviarlo directamente por WhatsApp."
-        );
-      }
+            const url = "https://wa.me/" + telefono +
+                        "?text=" + encodeURIComponent(mensaje);
+
+            window.location.href = url;
+        }
     }
-  </script>
-<script>
-    if (productoSeleccionado === "") {
-        alert("Primero selecciona un producto ☕");
-    } else {
-
-        // CAMBIA ESTE NÚMERO POR EL WHATSAPP DEL NEGOCIO
-        const telefono = "529619444361";
-
-        const mensaje =
-            "Hola, quiero hacer un pedido en Coffe Matte ☕💕\n\n" +
-            "Producto: " + productoSeleccionado +
-            "\n\n¿Me pueden confirmar el pedido?";
-
-        const url =
-            "https://wa.me/" +
-            telefono +
-            "?text=" +
-            encodeURIComponent(mensaje);
-
-        window.location.href = url;
-    }
-}
 </script>
+</body>
+</html>
 </body>
 </html>
