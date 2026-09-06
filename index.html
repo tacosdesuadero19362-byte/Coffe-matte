@@ -255,32 +255,14 @@
         Selecciona un producto para comenzar tu pedido.
       </p>
 
-function confirmarPedido() {
-  if (productoSeleccionado === "") {
-    alert("Primero selecciona un producto ☕");
-  } else {
-
-    // const telefono = +52 961 944 4361;
-    const mensaje =
-      "Hola, quiero hacer un pedido en Coffe Matte ☕💕\n\n" +
-      "Producto: " + productoSeleccionado +
-      "\n\n¿Me pueden confirmar el pedido?";
-
-    const url =
-      "https://wa.me/" + telefono +
-      "?text=" + encodeURIComponent(mensaje);
-
-    window.location.href = url;
-  }
-}
   <section id="contacto">
     <h2>📞 Contacto</h2>
 
-    <p>📱 Teléfono:</p> +52 961 944 4361
+    <p>📱 Teléfono:</p> 529619444361
 
-<a href="tel:+52 961 944 4361
+<a href="tel:529619444361
    style="color:#c45c78; font-size:20px; font-weight:bold;">
-   +52 961 944 4361
+   529619444361
 </a>
 
 <p>📸 Instagram: Próximamente</p>
@@ -307,7 +289,7 @@ function confirmarPedido() {
       });
     }
 
-    function confirmarPedido() {
+
       if (productoSeleccionado === "") {
         alert("Primero selecciona un producto ☕");
       } else {
@@ -319,6 +301,28 @@ function confirmarPedido() {
       }
     }
   </script>
+<script>
+    if (productoSeleccionado === "") {
+        alert("Primero selecciona un producto ☕");
+    } else {
 
+        // CAMBIA ESTE NÚMERO POR EL WHATSAPP DEL NEGOCIO
+        const telefono = "529619444361";
+
+        const mensaje =
+            "Hola, quiero hacer un pedido en Coffe Matte ☕💕\n\n" +
+            "Producto: " + productoSeleccionado +
+            "\n\n¿Me pueden confirmar el pedido?";
+
+        const url =
+            "https://wa.me/" +
+            telefono +
+            "?text=" +
+            encodeURIComponent(mensaje);
+
+        window.location.href = url;
+    }
+}
+</script>
 </body>
 </html>
