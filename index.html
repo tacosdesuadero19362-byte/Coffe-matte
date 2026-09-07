@@ -1,313 +1,435 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Coffe Matte ☕</title>
+    <title>Coffe Matte ☕💕</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff7fa;
-      color: #5a3a40;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff1f6;
+            color: #4b3038;
+        }
 
-    header {
-      background: #f8b8c8;
-      padding: 30px 15px;
-      text-align: center;
-    }
+        header {
+            background: white;
+            padding: 18px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-    }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
 
-    header p {
-      margin: 10px 0 0;
-      font-size: 18px;
-    }
+        nav a {
+            color: #c45c78;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-    nav {
-      background: white;
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 8px #ddd;
-    }
+        .hero {
+            text-align: center;
+            padding: 55px 20px;
+            background: linear-gradient(135deg, #ffdce8, #ffffff);
+        }
 
-    nav a {
-      margin: 8px;
-      color: #c45c78;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        .hero h1 {
+            font-size: 42px;
+            color: #c45c78;
+            margin-bottom: 12px;
+        }
 
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
+        .hero p {
+            font-size: 19px;
+        }
 
-    section h2 {
-      color: #c45c78;
-      font-size: 30px;
-    }
+        section {
+            padding: 45px 18px;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-    .productos {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+        h2 {
+            text-align: center;
+            color: #c45c78;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
 
-    .producto {
-      background: white;
-      width: 260px;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px #ddd;
-      transition: transform 0.2s;
-    }
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
 
-    .producto:hover {
-      transform: translateY(-5px);
-    }
+        .producto {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
 
-    .producto .emoji {
-      font-size: 60px;
-    }
+        .emoji {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
 
-    .producto h3 {
-      color: #c45c78;
-      font-size: 22px;
-    }
+        .producto h3 {
+            color: #c45c78;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
 
-    .producto p {
-      font-size: 16px;
-    }
+        .producto p {
+            margin-bottom: 12px;
+        }
 
-    .precio {
-      font-size: 20px;
-      font-weight: bold;
-      color: #9b405b;
-    }
+        .precio {
+            font-size: 22px;
+            font-weight: bold;
+            color: #b43e61;
+            margin-bottom: 15px;
+        }
 
-    button {
-      background: #f29ab0;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 20px;
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-    }
+        button {
+            border: none;
+            background: #c45c78;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-    button:hover {
-      background: #df7894;
-    }
+        button:hover {
+            background: #a94361;
+        }
 
-    #pedido {
-      background: #ffe4ec;
-    }
+        .pedido-box {
+            background: white;
+            border-radius: 25px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
 
-    .mensaje {
-      background: white;
-      max-width: 500px;
-      margin: auto;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px #ddd;
-    }
+        #pedidoTexto {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
 
-    footer {
-      background: #f8b8c8;
-      padding: 25px;
-      text-align: center;
-    }
+        .whatsapp {
+            background: #25D366;
+            font-size: 18px;
+            padding: 15px 25px;
+        }
 
-    .logo {
-      font-size: 55px;
-    }
-  </style>
+        .whatsapp:hover {
+            background: #1da851;
+        }
+
+        .contacto {
+            text-align: center;
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+        }
+
+        .telefono {
+            display: inline-block;
+            margin-top: 15px;
+            color: #c45c78;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #c45c78;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">☕🧋</div>
-    <h1>Coffe Matte</h1>
-    <p>Frappés, postres y mucho sabor 💕</p>
-  </header>
+<header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#frappes">Frappés</a>
+        <a href="#postres">Postres</a>
+        <a href="#pedido">Pedidos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#frappes">Frappés</a>
-    <a href="#postres">Postres</a>
-    <a href="#pedido">Pedidos</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+<!-- INICIO -->
+<section id="inicio" class="hero">
+    <h1>☕ Coffe Matte 💕</h1>
 
-  <section id="inicio">
-    <h2>Bienvenidos a Coffe Matte 💗</h2>
     <p>
-      Disfruta nuestros deliciosos frappés y postres preparados
-      especialmente para ti.
+        Frappés y postres hechos con cariño ✨
     </p>
-  </section>
+</section>
 
-  <section id="frappes">
-    <h2>🧋 Nuestros Frappés</h2>
+
+<!-- FRAPPÉS -->
+<section id="frappes">
+
+    <h2>🥤 Frappés</h2>
 
     <div class="productos">
 
-      <div class="producto">
-        <div class="emoji">🍓🧋</div>
-        <h3>Frappé de Fresa</h3>
-        <p>Delicioso frappé de fresa con crema.</p>
-        <div class="precio">$65 MXN</div>
-        <br>
-        <button onclick="pedir('Frappé de Fresa')">
-          Pedir
-        </button>
-      </div>
+        <div class="producto">
+            <div class="emoji">🍓</div>
 
-      <div class="producto">
-        <div class="emoji">🍫🧋</div>
-        <h3>Frappé de Chocolate</h3>
-        <p>Chocolate cremoso con un toque dulce.</p>
-        <div class="precio">$70 MXN</div>
-        <br>
-        <button onclick="pedir('Frappé de Chocolate')">
-          Pedir
-        </button>
-      </div>
+            <h3>Frappé de Fresa</h3>
 
-      <div class="producto">
-        <div class="emoji">☕🧋</div>
-        <h3>Frappé de Café</h3>
-        <p>Café frío y cremoso para los amantes del café.</p>
-        <div class="precio">$70 MXN</div>
-        <br>
-        <button onclick="pedir('Frappé de Café')">
-          Pedir
-        </button>
-      </div>
+            <p>Delicioso frappé de fresa.</p>
+
+            <div class="precio">$55 MXN</div>
+
+            <button onclick="pedir('Frappé de Fresa - $55 MXN')">
+                Pedir
+            </button>
+        </div>
+
+
+        <div class="producto">
+            <div class="emoji">🍫</div>
+
+            <h3>Frappé de Chocolate</h3>
+
+            <p>Chocolate cremoso y delicioso.</p>
+
+            <div class="precio">$60 MXN</div>
+
+            <button onclick="pedir('Frappé de Chocolate - $60 MXN')">
+                Pedir
+            </button>
+        </div>
+
+
+        <div class="producto">
+            <div class="emoji">☕</div>
+
+            <h3>Frappé de Café</h3>
+
+            <p>Perfecto para los amantes del café.</p>
+
+            <div class="precio">$60 MXN</div>
+
+            <button onclick="pedir('Frappé de Café - $60 MXN')">
+                Pedir
+            </button>
+        </div>
 
     </div>
-  </section>
 
-  <section id="postres">
+</section>
+
+
+<!-- POSTRES -->
+<section id="postres">
+
     <h2>🍰 Postres</h2>
 
     <div class="productos">
 
-      <div class="producto">
-        <div class="emoji">🍰</div>
-        <h3>Pastel de Fresa</h3>
-        <p>Suave pastel con delicioso sabor a fresa.</p>
-        <div class="precio">$55 MXN</div>
-        <br>
-        <button onclick="pedir('Pastel de Fresa')">
-          Pedir
-        </button>
-      </div>
+        <div class="producto">
+            <div class="emoji">🧁</div>
 
-      <div class="producto">
-        <div class="emoji">🍪</div>
-        <h3>Galletas</h3>
-        <p>Galletas recién hechas y crujientes.</p>
-        <div class="precio">$35 MXN</div>
-        <br>
-        <button onclick="pedir('Galletas')">
-          Pedir
-        </button>
-      </div>
+            <h3>Cupcake</h3>
 
-      <div class="producto">
-        <div class="emoji">🧁</div>
-        <h3>Cupcake</h3>
-        <p>Pequeño, delicioso y perfecto para acompañar tu bebida.</p>
-        <div class="precio">$40 MXN</div>
-        <br>
-        <button onclick="pedir('Cupcake')">
-          Pedir
-        </button>
-      </div>
+            <p>Pequeño, delicioso y perfecto para acompañar tu bebida.</p>
+
+            <div class="precio">$40 MXN</div>
+
+            <button onclick="pedir('Cupcake - $40 MXN')">
+                Pedir
+            </button>
+        </div>
+
+
+        <div class="producto">
+            <div class="emoji">🍰</div>
+
+            <h3>Pastel</h3>
+
+            <p>Pastel delicioso para cualquier ocasión.</p>
+
+            <div class="precio">$50 MXN</div>
+
+            <button onclick="pedir('Pastel - $50 MXN')">
+                Pedir
+            </button>
+        </div>
+
+
+        <div class="producto">
+            <div class="emoji">🍪</div>
+
+            <h3>Galletas</h3>
+
+            <p>Galletas dulces y recién hechas.</p>
+
+            <div class="precio">$30 MXN</div>
+
+            <button onclick="pedir('Galletas - $30 MXN')">
+                Pedir
+            </button>
+        </div>
 
     </div>
-  </section>
 
-  <section id="pedido">
+</section>
+
+
+<!-- PEDIDO -->
+<section id="pedido">
+
     <h2>🛒 Haz tu pedido</h2>
 
-    <div class="mensaje">
-      <p id="pedidoTexto">
-        Selecciona un producto para comenzar tu pedido.
-      </p>
+    <div class="pedido-box">
 
-  <section id="contacto">
+        <p id="pedidoTexto">
+            Selecciona un producto para comenzar tu pedido.
+        </p>
+
+        <button class="whatsapp" onclick="confirmarPedido()">
+            📱 Pedir por WhatsApp
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTO -->
+<section id="contacto">
+
     <h2>📞 Contacto</h2>
 
-    <p>📱 Teléfono:</p> 529619444361
+    <div class="contacto">
 
-<a href="tel:529619444361
-   style="color:#c45c78; font-size:20px; font-weight:bold;">
+        <p>📱 Teléfono:</p>
 
-</a>
+        <a class="telefono" href="tel:+529619444361">
+            529619444361
+        </a>
 
-<p>📸 Instagram: Próximamente</p>
-<p>📍 Ubicación: Próximamente</p>
-  </section>
+        <p style="margin-top:25px;">
+            📸 Instagram: Próximamente
+        </p>
 
-  <footer>
+        <p style="margin-top:10px;">
+            📍 Ubicación: Próximamente
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
     <p>☕ Coffe Matte 💕</p>
-    <p>Frappés y postres hechos con cariño.</p>
-    <p>© 2026 Coffe Matte</p>
-  </footer>
 
-  <script>
+    <p>Frappés y postres hechos con cariño.</p>
+
+    <p>© 2026 Coffe Matte</p>
+
+</footer>
+
+
+<script>
+
+    // Producto seleccionado
     let productoSeleccionado = "";
 
+
+    // Cuando el cliente pulsa "Pedir"
     function pedir(producto) {
-      productoSeleccionado = producto;
 
-      document.getElementById("pedidoTexto").innerText =
-        "Has seleccionado: " + producto;
+        productoSeleccionado = producto;
 
-      document.getElementById("pedido").scrollIntoView({
-        behavior: "smooth"
-      });
+        document.getElementById("pedidoTexto").innerText =
+            "Has seleccionado: " + producto;
+
+        document.getElementById("pedido").scrollIntoView({
+            behavior: "smooth"
+        });
     }
-    
+
+
+    // Enviar pedido a WhatsApp
     function confirmarPedido() {
+
         if (productoSeleccionado === "") {
+
             alert("Primero selecciona un producto ☕");
-        } else {
-            const telefono = "529619444361";
 
-            const mensaje =
-                "Hola, quiero hacer un pedido en Coffe Matte ☕💕\n\n" +
-                "Producto: " + productoSeleccionado +
-                "\n\n¿Me pueden confirmar el pedido?";
-
-            const url = "https://wa.me/" + telefono +
-                        "?text=" + encodeURIComponent(mensaje);
-
-            window.location.href = url;
+            return;
         }
+
+
+        // Número de WhatsApp de Coffe Matte
+        const telefono = "529619444361";
+
+
+        // Mensaje que recibirá el negocio
+        const mensaje =
+            "Hola, quiero hacer un pedido en Coffe Matte ☕💕\n\n" +
+            "Producto: " + productoSeleccionado + "\n\n" +
+            "¿Me pueden confirmar el pedido?";
+
+
+        // Crear enlace de WhatsApp
+        const url =
+            "https://wa.me/" +
+            telefono +
+            "?text=" +
+            encodeURIComponent(mensaje);
+
+
+        // Abrir WhatsApp
+        window.location.href = url;
     }
+
 </script>
-</body>
-</html>
+
 </body>
 </html>
